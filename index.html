@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        nav {
+            width: 25vw;
+            position: relative;
+        }
+        @media (max-width:567px){
+            nav {
+                width: 50vw;
+            }
+        }
+        .icon {
+            display: flex;
+            justify-content: center;
+            height: 50px ;
+            width: 50px;
+            flex-direction: column;
+            gap: 5px;
+            background-color: #eee;
+            padding: 2px;
+            cursor: pointer;
+            transition: 0.5s;
+            position: absolute;
+            left: 3px;
+            top: 3px;
+        }
+        span {
+            background-color: #656565;
+            width: 100%;
+            height: 8px;
+            transition: 0.5s;
+        }
+        .icon:hover span {
+            background-color: #333;
+        }
+        .close {
+            position: absolute;
+            top: 3px;
+            right: 3px;
+            width: fit-content;
+            padding: 3px 3px 7px 3px ;
+            color: white;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            border: 1px solid white;
+            border-radius: 50%;
+            height: 15px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .close:hover {
+            color: indianred;
+            border: 1px solid indianred;
+        }
+        .links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            padding-top: 50px;
+            background-color: #9a9a9a;
+            transition: 0.5s;
+            height: 75vh;
+        }
+        .transition {
+           transform: translateX(-140%);
+        }
+        a {
+            text-decoration: none;
+            color: white;
+            font-size: 30px;
+            transition: 0.3s;
+        }
+        a:hover {
+            color: #272727;
+        }
+        .none {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="links transition">
+            <div class="close">x</div>
+            <a href="#">head</a>
+            <a href="#">content</a>
+            <a href="#">section</a>
+            <a href="#">footer</a>
+        </div>
+    </nav>
+    <script>
+        x = document.querySelector('.close')
+        nav = document.querySelector('.links')
+        icon = document.querySelector('.icon')
+        icon.onclick = function () {
+            nav.classList.toggle('transition')
+            icon.classList.toggle('none')
+        }
+        x.onclick = function() {
+            nav.classList.toggle('transition')
+            icon.classList.toggle('none')
+        } 
+    </script>
+</body>
+</html>
